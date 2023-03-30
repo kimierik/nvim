@@ -17,6 +17,12 @@ Plug 'rose-pine/neovim'
 Plug 'NLKNguyen/papercolor-theme'
 
 
+"Fuzzy finder
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+" or                                , { 'branch': '0.1.x' }
+
+" syntax
 "Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -24,6 +30,7 @@ Plug 'voldikss/vim-floaterm'
 "Plug 'mattn/emmet-vim'
 Plug 'preservim/nerdtree'
 
+"drip
 Plug 'neovide/neovide'
 
 "Plug 'nvim-lua/completion-nvim'
@@ -232,6 +239,14 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
 
+
+
+"telescope remaps
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+
+inoremap <leader>cd <Esc>:set autochdir<cr>
+nnoremap <leader>cd <Esc>:set autochdir<cr>
 
 inoremap <c-b> <Esc>:NERDTreeToggle<cr>
 nnoremap <c-b> <Esc>:NERDTreeToggle<cr>
