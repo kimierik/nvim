@@ -6,15 +6,22 @@
 call plug#begin()
 
 
+
 "color schemes taht is can hotswap
 Plug 'gruvbox-community/gruvbox'
 Plug 'ghifarit53/daycula-vim' , {'branch' : 'main'}
 Plug 'Rigellute/shades-of-purple.vim'
+Plug 'folke/tokyonight.nvim'
+Plug 'sainnhe/sonokai'
+Plug 'rose-pine/neovim'
+Plug 'NLKNguyen/papercolor-theme'
 
 
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 Plug 'voldikss/vim-floaterm'
-Plug 'mattn/emmet-vim'
+"Plug 'mattn/emmet-vim'
 Plug 'preservim/nerdtree'
 
 Plug 'neovide/neovide'
@@ -24,6 +31,7 @@ Plug 'neovide/neovide'
 
 "language servers
 Plug 'neoclide/coc.nvim',{'branch':'release'}
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
 
 
 call plug#end()
@@ -32,9 +40,10 @@ call plug#end()
 
 set termguicolors
 
-colorscheme daycula
+"colorscheme daycula
+colorscheme PaperColor
 
-
+:lua require('treesitmodule')
 
 
 set nowrap
@@ -55,7 +64,7 @@ let g:floaterm_keymap_toggle='<F7>'
 
 
 
-let g:neovide_scale_factor = 0.8
+let g:neovide_scale_factor = 1.0
 set guifont=FiraCode\ Nerd\ Font:h13
 let g:neovide_cursor_antialiasing=v:true
 let g:neovide_refresh_rate=60
